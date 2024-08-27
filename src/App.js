@@ -2,17 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-// import About from './components/About';
+import About from './components/About';
 import { useState } from 'react';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   Routes,
-//   BrowserRouter
-// } from "react-router-dom"; because routing doesnt work properly with the github deployment.
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Routes,
+  BrowserRouter
+} from "react-router-dom"; 
+// because routing doesnt work properly with the github deployment.
 
 
 // let name = "Ajith";
@@ -49,35 +50,38 @@ function App() {
     }
   }
 
+
   return (
  <>
 
- {/* <BrowserRouter> */}
+ <BrowserRouter> 
 <Navbar title="TextUtils" About="About Utils" mode={mode} toggleMode={toggleMode} />
 
 <Alert alert ={alert}/>
 
 <div className="container">
-{/* <Routes>
-          <Route exact path="/about" element={<About />}/>
-            {/* <About /> */}
-          {/* </Route> */}
-          {/* <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />}/> */}
+<Routes>
+          <Route exact path="/about" element={<About mode={mode}/>}/>
+         
+           
+           <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try TextUtils." mode={mode} />}/>
           
-          {/* <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} /> */}
-          {/* </Route> */}
-{/* </Routes> */} 
-
-<TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
+          {/* <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />   */}
+            
+</Routes>  
+{/* 
+<TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} /> */}
 
 </div>
-{/* </BrowserRouter> */}
+</BrowserRouter>
 
 
 {/* <About/> */}
  
  </>
-  );
+);
 }
 
+
 export default App;
+
